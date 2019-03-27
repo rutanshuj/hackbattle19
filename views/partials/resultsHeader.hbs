@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/stylesheets/resultsHeader.css">
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav mr-auto">
+                <li>
+                    <a href="/">
+                        <img src="/images/homepage.png" width="100vh" height="90vh">
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav d-flex navbar-items" style="z-index: 99">
+                <li class="p-2">
+                    {{#if isagent}}
+                        <a href="/post-prop">
+                            Become A Host
+                        </a>
+                    {{/if}}
+                </li>
+                <li class="p-2">
+                    {{#if isagent}}
+                        <a href="/user/agentProfile">
+                            Profile
+                        </a>
+                    {{else}}
+                        <a href="/user/profile">
+                            Profile
+                        </a>
+                    {{/if}}
+                </li>
+                <li class="p-2">
+                    <a href ="/shopping-cart/">
+                        Favorites
+                        <span class="badge"> {{session.cart.totalQty}} </span>
+                    </a>
+                </li>
+                {{# if login }}
+                    <li class="p-2"><a href="/user/logout">Logout</a></li>
+                {{ else }}
+                    <li class="p-2"><a href="/user/signup">Sign Up</a></li>
+                    <li class="p-2"><a href="/user/signin">Sign In</a></li>
+                {{/if }}
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>

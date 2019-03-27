@@ -1,0 +1,194 @@
+<script src="/javascripts/index.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+<link rel="stylesheet" href="/stylesheets/indexHeader.css">
+
+<div class="cardDiv" id="cardDiv">
+    <div class="row">
+        <div class="col-lg-12 titleTenant">
+            <h1 class="titleAboveCard">TENANT</h1>
+        </div>
+    </div>
+    <div class="card indexCard text-black bg-light" id="searchCard" style = "visibility: hidden">
+        <div class="card-body">
+            <div id="search-form">
+                <h5 class="card-title">Search</h5>
+                <p class="card-text" id="card-details">I'm looking for
+                    a<input title="bhkInput" id="bhkInput" name="bmin" class="bhkInput" type="number"
+                            maxlength="2" min="1" max="99"
+                            oninput="this.style.width = ((this.value.length + 1) * 15) + 'px';
+                                 this.value=this.value.slice(0,this.maxLength);"
+                            value="2">
+
+                    on Mars with stay in range of
+                    <input title="priceMin" id="priceMin" name="pf" class="pInput" type="number"
+                           maxlength="6"
+                           oninput="this.style.width = ((this.value.length + 1) * 17) + 'px';
+                                    this.value=this.value.slice(0,this.maxLength);"
+                           value="2000">
+                    -
+                    <input title="priceMax" id="priceMax" name="pt" class="pInput" type="number"
+                           maxlength="6"
+                           oninput="this.style.width = ((this.value.length + 1) * 17) + 'px';
+                                 this.value=this.value.slice(0,this.maxLength);"
+                           value="3000">
+                    Mars Coin per month.</p>
+                <input type="submit" class="btn searchButton" id="submit" value="Search" onclick="showResults()">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="wrapperSidebar">
+            <nav id="sidebar">
+                <div class="sidebar-header d-flex justify-content-between">
+                    <div role="button" id="btnBack">&laquo; Back</div>
+                    <div role="button" id="btnReset">Reset</div>
+                </div>
+                <ul class="list-unstyled components" id="listOriginal">
+                    <li class="nav-item">
+                        <div role="button" class="nav-link" tabindex="0" id="location">Location</div>
+                    </li>
+                    <li>
+                        <div role="button" class="nav-link" tabindex="2" id="price">Price</div>
+                    </li>
+                    <li>
+                        <div role="button" class="nav-link" tabindex="3" id="sqft">Sqft</div>
+                    </li>
+                    <li>
+                        <div role="button" class="nav-link" tabindex="4" id="bedroom">Bedrooms</div>
+                    </li>
+                    <li>
+                        <div role="button" class="btnUpdate" tabindex="5" id="btnUpdate">Update</div>
+                    </li>
+                </ul>
+
+                <!--Options List-->
+                <ul class="nav selectedList" id="listLocation">
+                    <li class="nav-item">
+                        <div role="button" class="nav-link" id="liVellore" tabindex="0">Sector A</div>
+                    </li>
+                    <li class="nav-item">
+                        <div role="button" class="nav-link" id="liChennai" tabindex="0">Sector B</div>
+                    </li>
+                </ul>
+                <div class="selectedList" id="listPrice">
+                    <p>
+                        <label for="amount">Price range:</label>
+                        <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                    </p>
+
+                    <div id="slider-range">
+                    </div>
+                    <span>0</span>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span>1000</span>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span>2000</span>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span>3000</span>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span>4000</span>
+                    <span>&nbsp;&nbsp;</span>
+                    <span>5000</span>
+                    <div class="row">&nbsp;</div>
+                    <button type="button" class="btn button" id="btnDonePrice">Done</button>
+                </div>
+                <ul class="nav selectedList" id="listSqft">
+                    <li class="nav-item">
+                        <div role="button" class="nav-link" tabindex="0" id="liZeroPlus">0+</div>
+                    </li>
+                    <li class="nav-item">
+                        <div role="button" class="nav-link" tabindex="0" id="liFiveH">500+</div>
+                    </li>
+                    <li class="nav-item">
+                        <div role="button" class="nav-link" tabindex="0" id="liTh">1000+</div>
+                    </li>
+                    <li class="nav-item">
+                        <div role="button" class="nav-link" tabindex="0" id="liOneFiveTh">1500+</div>
+                    </li>
+                </ul>
+                <ul class="nav selectedList" id="listBedroom">
+                    <li class="nav-item">
+                        <div role="button" class="nav-link" tabindex="0" id="1">1+</div>
+                    </li>
+                    <li class="nav-item">
+                        <div role="button" class="nav-link" tabindex="0" id="2">2+</div>
+                    </li>
+                    <li class="nav-item">
+                        <div role="button" class="nav-link" tabindex="0" id="3">3+</div>
+                    </li>
+                    <li class="nav-item">
+                        <div role="button" class="nav-link" tabindex="0" id="4">4+</div>
+                    </li>
+                    <li class="nav-item">
+                        <div role="button" class="nav-link" tabindex="0" id="5">5+</div>
+                    </li>
+                </ul>
+            </nav>
+            <div id="content">
+                <button type="button" id="sidebarCollapse" class="navbar-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<div class="resultsContainer">-->
+    <!--<div class="row">-->
+        <!--<div class="col-lg-12">-->
+            <!--<div id="sr"></div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row" style="height: 300px;">-->
+        <!--&nbsp;-->
+    <!--</div>-->
+<!--</div>-->
+
+<script id = "result-template" type="text/x-handlebars-template">
+    \{{#each searchResults}}
+    <div class="row">
+        \{{#each this}}
+        <div class="col-sm-6 col-md-4 col-lg-4">
+            <div class="row">&nbsp</div>
+            <div class="card border-dark" style="width: 100%;" id="cardID"  onclick="location.href='/view-prop/\{{this._id}}'">
+                <div class="card-header border-dark">
+                    <img src="/\{{this.productImagePath}}" alt="..." class="card-img-top">
+                </div>
+                <div class="card-body">
+                    <div class="scrollArea">
+                        <h6> \{{this.flatDetails}}</h6>
+                        <br/>
+                        <h6> \{{this.buildingName}}</h6>
+                        <br/>
+                        <h6> \{{this.streetDetails}}</h6>
+
+                    </div>
+                    <hr>
+                    <p class="amenities">
+                        \{{this.amenities}}
+                    </p>
+                    <div class="row">
+                        <div class="price col-lg-6">
+                            {{#if_eq this.rentRange.min this.rentRange.max}}
+                        ₹ \{{this.rentRange.min}}
+                        {{else}}
+                        ₹ \{{this.rentRange.min}} - ₹ \{{this.rentRange.max}}
+                            {{/if_eq}}
+                        </div>
+                        <div class="col-lg-6">
+                            <a href="/add-to-cart/\{{this._id}}" class="btn btn-success pull-right" role="button">View Property</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        \{{/each}}
+    </div>
+    \{{/each}}
+</script>

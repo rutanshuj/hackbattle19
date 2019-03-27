@@ -1,0 +1,180 @@
+.container{
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+    height: 100%;
+    flex-flow: column;
+    display: flex;
+}
+
+.alert{
+    z-index: 100;
+    text-align: center;
+    position: fixed;
+    width: 30%;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, -50%);
+}
+
+/*Side Bar Filter Styles*/
+
+.wrapperSidebar {
+    padding: 0;
+    display: none;
+    align-items: stretch;
+    perspective: 1500px;
+    min-height: 100vh;
+}
+
+.sidebar-header{
+    padding: 20px 0 20px 20px;
+    color: #E0E0E0;
+    background: #1565C0;
+}
+
+.sidebar-header div[role="button"]{
+    padding-right:40px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#sidebar {
+    flex-flow: column;
+    display: flex;
+    min-width: 350px;
+    max-width: 350px;
+    min-height: 100%;
+    height: 100%;
+    /*!*min-height: 100vh;*!*/
+    background: #212121;
+    color: #E0E0E0;
+    transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+    transform-origin: center left;
+}
+
+#sidebar.active {
+    margin-left: -340px;
+    transform: rotateY(100deg); /* Rotate sidebar vertically by 100 degrees. */
+}
+
+/*Sidebar Items*/
+
+#sidebar ul.components{
+    padding: 10px 0;
+}
+
+.nav-link, .btnUpdate{
+    padding: 10px 10px 10px 20px;
+    font-size: 1.2em;
+    display: block;
+    font-weight: bold;
+}
+
+.nav-link:hover{
+    color: #fff;
+    background: #000;
+    cursor: pointer;
+}
+
+.nav-link.active, .nav-link:focus{
+    color: #fff;
+    background: #000;
+    outline: none;
+}
+
+.selectedList{
+    background: black;
+    color: #E0E0E0;
+    display:none;
+}
+
+.selectedList li div:hover{
+    color: #FFD54F;
+}
+
+#listPrice, .selectedItem{
+    background: white;
+    color: black;
+}
+
+.active{
+    color:#FFD54F;
+}
+
+.btnUpdate{
+    text-align: right;
+    outline: none;
+    cursor: pointer;
+    color: #000;
+    font-size: 1em;
+    padding: 20px 40px 0 0;
+}
+
+/*Sidebar Collapse*/
+#sidebarCollapse {
+    width: 40px;
+    height: 40px;
+    background: #f5f5f5;
+}
+
+.navbar-btn{
+    border: 1px;
+}
+
+#sidebarCollapse span {
+    width: 80%;
+    height: 2px;
+    margin: 0 auto;
+    display: block;
+    background: #555;
+    transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+}
+
+#sidebarCollapse span:first-of-type {
+    transform: rotate(45deg) translate(2px, 2px);
+}
+
+#sidebarCollapse span:nth-of-type(2){
+    opacity: 0;
+}
+
+#sidebarCollapse span:last-of-type {
+    transform: rotate(-45deg) translate(1px, -1px);
+}
+
+#sidebarCollapse.active span {
+    /* no rotation */
+    transform: none;
+    /* all bars are visible */
+    opacity: 1;
+    margin: 5px auto;
+}
+
+.resultsContainer{
+    /*position: fixed;*/
+    /*padding-right: 15px;*/
+    /*padding-left: 15px;*/
+    margin-left: 10%;
+    margin-right: 10%;
+    width:100%;
+    /*margin-right: auto;*/
+    /*margin-left: auto;*/
+}
+
+#cardID{
+    max-height: 500px;
+    cursor: pointer;
+}
+
+.scrollArea{
+    height: 90px;
+    overflow-y: auto;
+}
+.card-img-top{
+    height: 40vh;
+    width: 100%;
+}
+.card-header{
+    padding: 0;
+}

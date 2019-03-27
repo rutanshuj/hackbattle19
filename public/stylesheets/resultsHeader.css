@@ -1,0 +1,14 @@
+.navbar{
+    background-image: url(/images/navbar3.png);
+}
+.nav.navbar-nav.mr-auto{
+    padding-top: 10px;
+    z-index: 99;
+}
+
+.navbar-items li a{
+
+    text-decoration: none;
+    padding-left: 30px;
+    color: white;
+}

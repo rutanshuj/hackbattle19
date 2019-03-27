@@ -1,0 +1,31 @@
+{
+  "name": "hackbattle19",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "connect-mongo": "^2.0.3",
+    "cookie-parser": "~1.4.3",
+    "csurf": "^1.9.0",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "express-flash": "0.0.2",
+    "express-handlebars": "^3.0.2",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.1",
+    "hbs": "~4.0.1",
+    "http-errors": "~1.6.2",
+    "mongoose": "^5.4.20",
+    "morgan": "~1.9.0",
+    "multer": "^1.4.1",
+    "nodemailer": "^6.0.0",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "randomstring": "^1.1.5",
+    "tinify": "^1.6.0-beta.2"
+  }
+}
